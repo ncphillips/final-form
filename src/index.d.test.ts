@@ -24,6 +24,15 @@ form = createForm<FormData>({
   }
 })
 
+form = createForm<FormData>({
+  onSubmit,
+  validate(formData) {
+    console.log(formData.foo as string)
+    console.log(formData.bar as number)
+    return {}
+  }
+})
+
 console.log(formState.active as string, formState.active as undefined)
 console.log(formState.dirty as boolean)
 console.log(formState.dirtyFields as AnyObject, formState.dirtyFields)
