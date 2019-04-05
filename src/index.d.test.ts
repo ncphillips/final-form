@@ -13,6 +13,11 @@ type FormData = {
 }
 
 form = createForm<FormData>({
+  initialValues: { foo: 'bar', bar: 1 },
+  onSubmit
+})
+
+form = createForm<FormData>({
   onSubmit(formData) {
     console.log(formData.foo as string)
     console.log(formData.bar as number)
